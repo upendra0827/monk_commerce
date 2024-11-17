@@ -1,0 +1,34 @@
+#root {
+  /* max-width: 1280px; */
+  margin: 0 auto;
+  /* padding: 2rem; */
+  text-align: center;
+}
+
+hr {
+  width: 665px;
+  height: 0px;
+  top: 299.5px;
+  left: 388px;
+  gap: 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  border: 1px solid #0000001A
+}
+
+.header>div {
+  width: 54px;
+  height: 16px;
+  top: 172px;
+  left: 361px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: SF Pro Text;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #000000E5;
+}

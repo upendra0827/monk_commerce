@@ -5,15 +5,17 @@ import Edit from '../../assets/Edit.svg'
 import VariantCard from "./VariantCard";
 import Arrow from '../../assets/Arrow.svg'
 
-const ProductCard = ({ setNoOfDeletedProducts, setAreProductsPresent, statusOfProducts, handleEditProductIndex, product, i, handleDragStart, handleDragOver, handleDragDrop, handleProductRemove, openModal }) => {
+const ProductCard = ({ setAreProductsPresent, statusOfProducts, handleEditProductIndex, product, i, handleDragStart, handleDragOver, handleDragDrop, handleProductRemove, openModal }) => {
     const [showVariants, setShowVariants] = useState(false)
     const [showDiscountBtn, setShowDiscountBtn] = useState(true)
 
     useEffect(() => {
-        if (statusOfProducts[product.id] === 'unchecked') {
-            setNoOfDeletedProducts(prev => prev + 1)
+        if ((statusOfProducts[product.id] === 'checked' || statusOfProducts[product.id] === 'indeterminate')) {
+            setAreProductsPresent(true)
+        } else {
+            setAreProductsPresent(false)
         }
-    }, [])
+    }, [product])
 
     return (statusOfProducts[product.id] === 'checked' || statusOfProducts[product.id] === 'indeterminate') && (
         <>
@@ -29,7 +31,6 @@ const ProductCard = ({ setNoOfDeletedProducts, setAreProductsPresent, statusOfPr
                         <div className="dragIcon">
                             <img src={DragAndDropIcon} />
                         </div>
-                        {<div>{i + 1}</div>}
                         <div className={`title`}>
                             <div>{product.title}</div>
                             <img onClick={() => {
